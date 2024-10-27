@@ -39,3 +39,10 @@
 .node.black {
     background-color: black;
 }
+
+.line {
+    position: absolute;
+    width: 2px;
+    background-color: black;
+    transform-origin: top left;
+}
