@@ -265,7 +265,7 @@ export class RBTree {
     }
 
     // Función de búsqueda
-    public searchNode(data: number): string | void {
+    public searchNode(data: number): string | null {
         let currentNode: NodeRBT = this.root;
 
         while (currentNode !== this.leaf) {

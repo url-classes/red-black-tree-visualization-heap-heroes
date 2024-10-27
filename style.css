@@ -1,0 +1,20 @@
+#container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#control-panel {
+    margin: 20px 0;
+}
+
+#tree-visualization {
+    border: 1px solid #000;
+    height: 400px;
+    margin-top: 20px;
+}
+
+#node-info {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}
