@@ -9,6 +9,10 @@ export class RBTree {
         this.root = this.leaf;
     }
 
+    public getRoot(): NodeRBT {
+        return this.root;
+    }
+
     private fixDelete(node: NodeRBT): void {
         while (node !== this.root && node.getColor() === "BLACK") {
             if (node === node.getFather().getLeftChild()) {
