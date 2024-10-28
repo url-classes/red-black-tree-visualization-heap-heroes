@@ -1,4 +1,4 @@
-import { RBTree } from "./rbt";
+import { RBTree } from "./src/rbt";
 
 const myRBTree: RBTree = new RBTree();
 // Inserciones.
