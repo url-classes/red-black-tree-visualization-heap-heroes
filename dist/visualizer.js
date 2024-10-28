@@ -9,12 +9,10 @@ var treeVisualization = document.getElementById("tree-visualization");
 var nodeInfo = document.getElementById("node-info");
 // Función para insertar un nodo y actualizar la visualización
 insertButton.addEventListener("click", function () {
-    var value = parseInt(nodeValueInput.value);
-    if (!isNaN(value)) {
-        console.log("Valor insertado:", value); // Depuración: verifica que el valor se obtenga
+    var value = parseInt(nodeValueInput.value, 10);
+    if (!isNaN(value)) { // Depuración: verifica que el valor se obtenga
         tree.insert(value);
-        nodeValueInput.value = "";
-        renderTree(); // Actualiza la visualización
+        nodeValueInput.value = '';
     }
     else {
         console.log("Valor no válido"); // Depuración: alerta si el valor no es válido

@@ -11,11 +11,10 @@ const nodeInfo = document.getElementById("node-info") as HTMLDivElement;
 
 // Función para insertar un nodo y actualizar la visualización
 insertButton.addEventListener("click", () => {
-    const value = parseInt(nodeValueInput.value);
-    if (!isNaN(value)) {
-        console.log("Valor insertado:", value); // Depuración: verifica que el valor se obtenga
+    const value = parseInt(nodeValueInput.value, 10);
+    if (!isNaN(value)) {// Depuración: verifica que el valor se obtenga
         tree.insert(value);
-        nodeValueInput.value = "";
+        nodeValueInput.value = '';
         renderTree(); // Actualiza la visualización
     } else {
         console.log("Valor no válido"); // Depuración: alerta si el valor no es válido
