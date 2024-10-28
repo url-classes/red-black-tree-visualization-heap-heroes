@@ -404,12 +404,6 @@ class RBTree {
 
 const myRBTree = new RBTree();
 
-//myRBTree.insert(9);
-//myRBTree.insert(12);
-//myRBTree.insert(20);
-//myRBTree.insert(30);
-//myRBTree.insert(25);
-//myRBTree.printAll();
 
 //console.log("\nRecorrido en Inorden:");
 //myRBTree.inOrderTraversal();
@@ -435,6 +429,14 @@ document.getElementById("insert").addEventListener("click", function() {
     const context = canvas.getContext("2d");
     context.clearRect(0, 0, canvas.width, canvas.height);
     myRBTree.insert(parseInt(document.getElementById("value").value));
+    myRBTree.dibujar_nodos();
+});
+
+document.getElementById("delete").addEventListener("click", function() {
+    const canvas = document.getElementById("myCanvas");
+    const context = canvas.getContext("2d");
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    myRBTree.delete(parseInt(document.getElementById("value").value));
     myRBTree.dibujar_nodos();
 });
 
