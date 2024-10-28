@@ -1,3 +1,5 @@
+
+
 function drawArrow(context, fromX, fromY, toX, toY) {
     context.beginPath();
     context.moveTo(fromX, fromY);
@@ -102,6 +104,15 @@ class RBTree {
     constructor() {
         this.leaf = new NodeRBT(0, true);
         this.root = this.leaf;
+        this.recorrido = "";
+    }
+
+    getRecorrido(){
+        return this.recorrido;
+    }
+
+    vaciarRecorrido(){
+        this.recorrido = "";
     }
 
     fixDelete(node) {
@@ -342,14 +353,14 @@ class RBTree {
     inOrderTraversal(node = this.root) {
         if (node !== this.leaf) {
             this.inOrderTraversal(node.getLeftChild());
-            console.log(node.getData() + "(" + node.getColor() + ")");
+            this.recorrido += node.getData() + "(" + node.getColor() + ")" + "\n";
             this.inOrderTraversal(node.getRightChild());
         }
     }
 
     preOrderTraversal(node = this.root) {
         if (node !== this.leaf) {
-            console.log(node.getData() + "(" + node.getColor() + ")");
+            this.recorrido += node.getData() + "(" + node.getColor() + ")" + "\n";
             this.preOrderTraversal(node.getLeftChild());
             this.preOrderTraversal(node.getRightChild());
         }
@@ -359,7 +370,7 @@ class RBTree {
         if (node !== this.leaf) {
             this.postOrderTraversal(node.getLeftChild());
             this.postOrderTraversal(node.getRightChild());
-            console.log(node.getData() + "(" + node.getColor() + ")");
+            this.recorrido += node.getData() + "(" + node.getColor() + ")" + "\n";
         }
     }
 
@@ -439,6 +450,29 @@ document.getElementById("delete").addEventListener("click", function() {
     myRBTree.delete(parseInt(document.getElementById("value").value));
     myRBTree.dibujar_nodos();
 });
+
+document.getElementById("inorder").addEventListener("click", function() {
+    myRBTree.inOrderTraversal();
+    let texto = myRBTree.getRecorrido();
+    alert(texto);
+    myRBTree.vaciarRecorrido();
+});
+
+document.getElementById("preorder").addEventListener("click", function() {
+    myRBTree.preOrderTraversal();
+    let texto = myRBTree.getRecorrido();
+    alert(texto);
+    myRBTree.vaciarRecorrido();
+});
+
+document.getElementById("postorder").addEventListener("click", function() {
+    myRBTree.postOrderTraversal();
+    let texto = myRBTree.getRecorrido();
+    alert(texto);
+    myRBTree.vaciarRecorrido();
+});
+
+
 
 
 
