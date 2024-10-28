@@ -12,21 +12,16 @@
     <div id="container">
         <h1>Visualizador de Árbol Rojo-Negro</h1>
         <div id="control-panel">
-            <input type="text" id="node-value" placeholder="Valor del nodo">
-            <button id="insert-button">Insertar</button>
-            <button id="search-button">Buscar</button>
-            <button id="inorder-button">Inorden</button>
-            <button id="preorder-button">Preorden</button>
-            <button id="postorder-button">Postorden</button>
+            <input type="number" id="value" placeholder="Valor del nodo">
+            <button id="insert">Insertar</button>
+            <button id="search">Buscar</button>
+            <button id="inorder">Inorden</button>
+            <button id="preorder">Preorden</button>
+            <button id="postorder">Postorden</button>
         </div>
-        <div id="tree-visualization">
-            <!-- Los nodos del árbol -->
-        </div>
-        <div id="node-info">
-            <!-- Información del nodo seleccionado -->
-        </div>
+        <canvas id="myCanvas" width="1000" height="1000"></canvas>
     </div>
-    <script src="dist/visualizer.js"></script>
+    <script src="src/proyecto_2.js"></script>
 </body>
 
 </html>

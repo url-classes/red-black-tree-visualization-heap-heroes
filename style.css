@@ -46,3 +46,19 @@
     background-color: black;
     transform-origin: top left;
 }
+
+
+#see_tree button {
+    border: none;
+    border-radius: 50%; 
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: white; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+#see_tree button:hover {
+    background-color: #0056b3; 
+}
