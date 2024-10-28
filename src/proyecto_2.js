@@ -387,7 +387,7 @@ class RBTree {
 
         while (currentNode !== this.leaf) {
             if (data === currentNode.getData()) {
-                return `Nodo encontrado: ${currentNode.getData()}(${currentNode.getColor()})`;
+                return "Nodo encontrado";
             } else if (data < currentNode.getData()) {
                 currentNode = currentNode.getLeftChild();
             } else {
@@ -414,26 +414,6 @@ class RBTree {
 }
 
 const myRBTree = new RBTree();
-
-
-//console.log("\nRecorrido en Inorden:");
-//myRBTree.inOrderTraversal();
-
-//console.log("\nRecorrido en Preorden:");
-//myRBTree.preOrderTraversal();
-
-//console.log("\nRecorrido en Postorden:");
-//myRBTree.postOrderTraversal();
-
-//console.log("\n");
-
-
-//console.log(myRBTree.searchNode(15));
-
-
-//myRBTree.delete(25);
-//myRBTree.printAll();
-
 
 document.getElementById("insert").addEventListener("click", function() {
     const canvas = document.getElementById("myCanvas");
@@ -470,6 +450,11 @@ document.getElementById("postorder").addEventListener("click", function() {
     let texto = myRBTree.getRecorrido();
     alert(texto);
     myRBTree.vaciarRecorrido();
+});
+
+document.getElementById("search").addEventListener("click", function() {
+    let texto = myRBTree.searchNode(parseInt(document.getElementById("value").value));
+    alert(texto);
 });
 
 
